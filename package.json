@@ -1,0 +1,38 @@
+{
+  "name": "Algorithms",
+  "description": "Algorithms WebSite",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "packages/email/*"
+  ],
+  "scripts": {
+    "build": "turbo build --parallel",
+    "clean": "git clean -xdf node_modules",
+    "dev": "turbo dev --parallel",
+    "test": "turbo test --parallel",
+    "start:algorithms": "turbo start --filter=@Algorithms/algorithms",
+    "dev:engine": "turbo dev --filter=@Algorithms/engine",
+    "dev:api": "turbo dev --filter=@Algorithms/api",
+    "dev:algorithms": "turbo dev --filter=@Algorithms/algorithms",
+    "lint": "turbo lint && manypkg check",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.2.5",
+    "turbo": "^2.1.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "npm@10.8.1",
+  "dependencies": {
+    "@manypkg/cli": "^0.21.4"
+  }
+}

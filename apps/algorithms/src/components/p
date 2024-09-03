@@ -1,0 +1,197 @@
+font Helvetica Neue LT, Helvetica Neue, Helvetica, Arial, sans-serif
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.post {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.post h2 {
+    margin-top: 0;
+}
+.post p {
+    line-height: 1.6;
+}
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+.search-bar input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+.social-share {
+    margin-top: 10px;
+}
+.social-share a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+.comment-section {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.comment {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.login-container, .admin-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login-container h2, .admin-container h2 {
+    text-align: center;
+}
+.login-container input, .admin-container input, .admin-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container button, .admin-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+
+
+
+<!-- Página de Administração -->
+<div class="admin-container" id="admin">
+<h2>Administração</h2>
+<form action="#" method="post">
+    <input type="text" name="postTitle" placeholder="Título do Post" required>
+    <textarea name="postContent" rows="10" placeholder="Conteúdo do Post" required></textarea>
+    <button type="submit">Publicar Post</button>
+</form>
+<div class="post">
+    <h2>Postagem Administrativa</h2>
+    <p>Aqui você pode ver e gerenciar suas postagens.</p>
+</div>
+</div>
+
+<footer>
+<p>&copy; 2024 Meu Blog Pessoal. Todos os direitos reservados.</p>
+</footer>
+
+
+    <!-- Página Sobre Mim -->
+    <div class="container" id="about">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Sou [Seu Nome], um entusiasta de tecnologia e escritor. Neste blog, compartilho minhas experiências, pensamentos e ideias sobre tecnologia, inovação e muito mais.</p>
+    </div>
+
+    <!-- Página de Contato -->
+    <div class="container" id="contact">
+        <h2>Contato</h2>
+        <p>Você pode me contatar através do e-mail: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
+    </div>
+
+    <!-- Página de Login -->
+    <div class="login-container" id="login">
+        <h2>Login</h2>
+        <form action="admin.html" method="post">
+            <input type="text" name="username" placeholder="Nome de Usuário" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+
+
+
+    name: Deploy Next.js site to Pages
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - apps/algorithms/src/**
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          cd apps/algorithms
+          npm install
+
+      - name: Build with Next.js
+        run: |
+          cd apps/algorithms
+          npm run build 
+
+      - name: Export Next.js site
+        run: |
+          cd apps/algorithms
+          npm run export
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/algorithms/out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+
+        name: Deploy Next.js site to Pages
