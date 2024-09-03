@@ -57,7 +57,7 @@ const config = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "example.com", // Substitua por domínios específicos se possível
+        hostname: "**", // Substitua por domínios específicos se possível
       },
     ],
   },
