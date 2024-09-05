@@ -1,19 +1,19 @@
-name: Deploy to Vercel
+name: Deploy Next.js to Vercel
 
 on:
   push:
     branches:
-      - main
+      - main  # Ou qualquer outro branch que você deseja que dispare o deploy
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -22,15 +22,16 @@ jobs:
           cd apps/algorithms
           npm install
 
-      - name: Build
+      - name: Build the project
         run: |
           cd apps/algorithms
           npm run build
 
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v22
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
+        run: |
+          vercel --token ${{ secrets.VERCEL_TOKEN }} --scope your-vercel-scope --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
