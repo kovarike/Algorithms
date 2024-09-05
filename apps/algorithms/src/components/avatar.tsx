@@ -22,7 +22,7 @@ export function Avatar({ src, alt, size, border }: AvatarProps) {
         } rounded-full overflow-hidden bg-gray-200`}
     >
       {src ? (
-        <Image src={src} alt={alt} className="object-cover w-full h-full" />
+        <Image src={src} alt={alt} className="object-cover w-full h-full" width={24} height={24} />
       ) : (
         <span className="text-gray-600">{alt?.charAt(0).toUpperCase()}</span>
       )}

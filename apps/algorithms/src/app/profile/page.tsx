@@ -39,27 +39,27 @@ export default function Profile() {
           </h3>
           <div className="flex items-center justify-center space-y-2 mx-auto mb-4">
             <Link href="https://www.linkedin.com/in/danilokovarike/">
-              <Img src={social_media.linkedin} alt="linkedin" />
+              <Img width={60} height={24} src={social_media.linkedin} alt="linkedin" />
             </Link>
 
             <Link href="https://www.github.com/kovarike/">
-              <Img src={social_media.github} alt="gitub" />
+              <Img width={60} height={24} src={social_media.github} alt="gitub" />
             </Link>
             <Link href="https://www.instagram.com/usdanilo/">
-              <Img src={social_media.whatsapp} alt="whatsapp" />
+              <Img width={60} height={24} src={social_media.whatsapp} alt="whatsapp" />
             </Link>
 
             <Link href="https://www.instagram.com/usdanilo/">
-              <Img src={social_media.instagram} alt="intagram" />
+              <Img width={60} height={24} src={social_media.instagram} alt="intagram" />
             </Link>
             <Link href="https://www.github.com/kovarike/">
-              <Img src={social_media.email} alt="email" />
+              <Img width={300} height={100} src={social_media.email} alt="email" />
             </Link>
           </div>
 
           <div className="mx-auto mt-2 overflow-hidden space-x-1 border-b border-slate-500">
             <div className="flex items-center justify-center">
-              <Img src={profile.github} alt="github" />
+              <Img width={60} height={24} src={profile.github} alt="github" />
             </div>
 
             <div className=" flex mb-4 items-center justify-center mx-auto mt-2 overflow-hidden space-x-1">
