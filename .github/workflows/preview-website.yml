@@ -1,13 +1,17 @@
-name: Deploy Next.js to Vercel
+name: Preview Deployment - Website
 
 on:
   push:
-    branches:
-      - main  # Ou qualquer outro branch que você deseja que dispare o deploy
+    branches-ignore:
+      - main
+    paths:
+      - apps/algorithms/**  # Ajuste o caminho conforme necessário
+      - packages/**  # Inclua outros caminhos relevantes para mudanças
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,8 +34,11 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy to Vercel
         run: |
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+          vercel --token ${{ secrets.VERCEL_TOKEN }} --prebuilt --archive=tgz
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
