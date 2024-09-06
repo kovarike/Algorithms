@@ -8,7 +8,7 @@ export function Translate() {
 
 
   return (
-    <div>
+    <div className="max-w-20 w-20">
       <div className="flex items-center mx-auto my-0">
         <button
 

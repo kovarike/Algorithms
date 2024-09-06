@@ -12,7 +12,7 @@ interface ImgProps extends HTMLAttributes<HTMLImageElement> {
 export function Img({ src, props, alt, height, width }: ImgProps) {
   return (
     <>
-      <Image src={src} alt={alt} {...props} height={height} width={width} />
+      <img src={src} alt={alt} {...props} height={height} width={width} className="object-cover" />
     </>
   );
 }
