@@ -1,4 +1,4 @@
-name: Preview Deployment - Website
+name: preview deployment - website
 
 on:
   push:
@@ -23,12 +23,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd apps/algorithms
           npm install
 
       - name: Build the project
         run: |
-          cd apps/algorithms
           npm run build
 
       - name: Install Vercel CLI
