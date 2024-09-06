@@ -1,5 +1,5 @@
 {
-  "name": "@Algorithms/engine",
+  "name": "@algorithms/engine",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts"
