@@ -3,8 +3,12 @@
 import { Download } from "./download";
 import React from "react";
 
+interface PropsTranslate {
+  id: string,
 
-export function Translate() {
+}
+
+export function Translate({ id }: PropsTranslate) {
 
 
   return (
@@ -22,7 +26,7 @@ export function Translate() {
         >
           en
         </button>
-        <Download />
+        <Download id={id} />
       </div>
     </div>
   );
