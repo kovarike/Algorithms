@@ -3,7 +3,7 @@
 import { motion, SVGMotionProps } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-interface LogoProps extends SVGMotionProps<SVGSVGElement> {}
+interface LogoProps extends SVGMotionProps<SVGSVGElement> { }
 
 export const LogoAnimated: React.FC<LogoProps> = (props: LogoProps) => {
   const [mounted, setMounted] = useState(false);
@@ -32,9 +32,12 @@ export const LogoAnimated: React.FC<LogoProps> = (props: LogoProps) => {
         transition={{ duration: 2, ease: "easeInOut" }}
       >
         <tspan fontWeight="bold" fill="#00FF00">
-          {"<Algorithms/>"}
+          {"Algorithms"}
         </tspan>
       </motion.text>
     </motion.svg>
   );
 };
+
+
+

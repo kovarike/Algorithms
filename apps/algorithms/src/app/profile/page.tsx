@@ -1,5 +1,6 @@
 "use server";
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { Avatar } from "@/components/avatar";
 import { Container } from "@/components/container";
 import { ContainerFull } from "@/components/containerfull";
@@ -12,14 +13,15 @@ import { Translate } from "@/components/translate";
 
 
 export default async function Profile() {
-  const { profile, social_media, src } = await ProfileInf();
+  const { profile, social_media } = await ProfileInf();
+  const id = uuidv4();
 
   return (
     <>
       <ContainerFull>
         <Header />
         <Container>
-          <div className="flex items-center border-b border-slate-500 py-1">
+          <div className="flex items-center border-b border-slate-500 py-1" id={id}>
             <Avatar alt="Danilo" border size="Xlarge" src={profile.src} />
             <div className="text-center mx-auto space-y-4 max-w-auto w-auto">
               <h2 className="text-3xl font-semibold font-algorithms-font">
@@ -29,7 +31,7 @@ export default async function Profile() {
                 Computer Engineer
               </h2>
             </div>
-            <Translate />
+            <Translate id={id} />
           </div>
           <div className=" flex items-center mx-auto mt-2 overflow-hidden">
             <Text />
@@ -61,19 +63,6 @@ export default async function Profile() {
             <div className="flex items-center justify-center mb-4">
               <Img src={profile.github} alt="github" />
             </div>
-
-            {/* <div className=" flex mb-4 items-center justify-center mx-auto mt-2 overflow-hidden space-x-1 overflow-x-scroll px-5">
-              <Img src={src.js} height={24} width={60} alt="img" />
-              <Img src={src.ts} height={24} width={60} alt="img" />
-              <Img src={src.c} height={24} width={60} alt="img" />
-              <Img src={src.node} height={24} width={60} alt="img" />
-              <Img src={src.express} height={24} width={60} alt="img" />
-              <Img src={src.react} height={24} width={60} alt="img" />
-              <Img src={src.pg} height={24} width={60} alt="img" />
-              <Img src={src.m_db} height={24} width={60} alt="img" />
-              <Img src={src.npm} height={24} width={60} alt="img" />
-              <Img src={src.github} height={24} width={60} alt="img" />
-            </div> */}
           </div>
         </Container>
       </ContainerFull>
