@@ -1,7 +1,6 @@
-
 import { HTMLAttributes } from "react";
 
-interface TextProps extends HTMLAttributes<HTMLParagraphElement> { }
+interface TextProps extends HTMLAttributes<HTMLParagraphElement> {}
 
 export function Text(props: TextProps) {
   return (

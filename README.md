@@ -6,6 +6,7 @@ Clique em New repository secret e adicione um novo segredo com um nome (por exem
 1. **Testar Localmente**: Certifique-se de que sua aplicação funciona conforme esperado localmente com `npm run build` e `npm start` para garantir que não há problemas antes de fazer o deploy.
 
 2. **Integrar com Vercel**:
+
    - **Conectar Repositório**: Conecte seu repositório GitHub à Vercel.
    - **Configurações do Projeto**: Na Vercel, você pode ajustar configurações específicas do projeto se necessário, mas normalmente as configurações padrão funcionam bem.
 

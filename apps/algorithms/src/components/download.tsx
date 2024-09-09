@@ -1,12 +1,10 @@
-"use client"
+"use client";
 import { ArrowDownToLine } from "lucide-react";
-import { toPng } from 'html-to-image';
+import { toPng } from "html-to-image";
 
 interface PropsDownload {
-  id: string,
-
+  id: string;
 }
-
 
 export function Download({ id }: PropsDownload) {
   const download = async () => {
@@ -14,7 +12,7 @@ export function Download({ id }: PropsDownload) {
     if (svgElement) {
       try {
         const dataUrl = await toPng(svgElement);
-        const link = document.createElement('a');
+        const link = document.createElement("a");
         link.href = dataUrl;
         link.download = `${id}.png`;
         document.body.appendChild(link);

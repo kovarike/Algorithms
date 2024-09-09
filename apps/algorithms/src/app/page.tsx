@@ -1,5 +1,3 @@
-
-
 import { ContainerFull } from "@/components/containerfull";
 import { Header } from "@/components/header";
 import { Link } from "@/components/link";

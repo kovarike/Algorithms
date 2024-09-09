@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -36,7 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,17 +49,29 @@ export default function RootLayout({
         <meta name="author" content="Danilo Silva" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Algorithms | Engineering" />
-        <meta property="og:description" content="Explore the world of engineering and technology with Algorithms." />
-        <meta property="og:image" content={`https://algorithmss.com.br/logo.png`} />
+        <meta
+          property="og:description"
+          content="Explore the world of engineering and technology with Algorithms."
+        />
+        <meta
+          property="og:image"
+          content={`https://algorithmss.com.br/logo.png`}
+        />
         <meta property="og:url" content="https://algorithmss.com.br" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Algorithms | Engineering" />
-        <meta name="twitter:description" content="Stay informed with the latest trends in engineering." />
-        <meta name="twitter:image" content={`https://algorithmss.com.br/twitter-logo.png`} />
+        <meta
+          name="twitter:description"
+          content="Stay informed with the latest trends in engineering."
+        />
+        <meta
+          name="twitter:image"
+          content={`https://algorithmss.com.br/twitter-logo.png`}
+        />
         <link rel="canonical" href="https://algorithmss.com.br" />
       </head>
 
-      <body className={`${inter.className} bg-zinc-950`} >{children}</body>
+      <body className={`${inter.className} bg-zinc-950`}>{children}</body>
     </html>
   );
 }

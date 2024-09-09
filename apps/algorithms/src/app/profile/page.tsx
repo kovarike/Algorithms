@@ -1,8 +1,7 @@
 "use server";
 import React from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { Avatar } from "@/components/avatar";
-import { Container } from "@/components/container";
 import { ContainerFull } from "@/components/containerfull";
 import { Header } from "@/components/header";
 import { Link } from "@/components/link";
@@ -11,17 +10,19 @@ import { Img } from "@/components/img";
 import { ProfileInf } from "./profileinf";
 import { Translate } from "@/components/translate";
 
-
 export default async function Profile() {
   const { profile, social_media } = await ProfileInf();
   const id = uuidv4();
+
 
   return (
     <>
       <ContainerFull>
         <Header />
-        <Container>
-          <div className="flex items-center border-b border-slate-500 py-1" id={id}>
+        <div className="my-0 mx-auto mx-full p-6 bg-white text-slate-800" id={id}>
+          <div
+            className="flex items-center border-b border-slate-500 py-1"
+          >
             <Avatar alt="Danilo" border size="Xlarge" src={profile.src} />
             <div className="text-center mx-auto space-y-4 max-w-auto w-auto">
               <h2 className="text-3xl font-semibold font-algorithms-font">
@@ -64,7 +65,7 @@ export default async function Profile() {
               <Img src={profile.github} alt="github" />
             </div>
           </div>
-        </Container>
+        </div>
       </ContainerFull>
     </>
   );
