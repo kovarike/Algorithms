@@ -18,11 +18,18 @@ const sizeClasses = {
 export function Avatar({ src, alt, size, border }: AvatarProps) {
   return (
     <div
-      className={`relative inline-flex items-center justify-center ${sizeClasses[size]} ${border ? "border-2 border-gray-300" : ""
-        } rounded-full overflow-hidden bg-gray-200 w-auto`}
+      className={`relative inline-flex items-center justify-center ${sizeClasses[size]} ${
+        border ? "border-2 border-gray-300" : ""
+      } rounded-full overflow-hidden bg-gray-200 w-auto`}
     >
       {src ? (
-        <img src={src} alt={alt} className="object-cover w-full h-full" width={24} height={24} />
+        <img
+          src={src}
+          alt={alt}
+          className="object-cover w-full h-full"
+          width={24}
+          height={24}
+        />
       ) : (
         <span className="text-gray-600">{alt?.charAt(0).toUpperCase()}</span>
       )}

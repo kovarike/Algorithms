@@ -1,17 +1,13 @@
 {
-  "name": "@algorithms/engine",
+  "name": "engine",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "start": "vercel dev",
+    "deploy": "vercel"
   },
   "dependencies": {
-    "@hono/zod-openapi": "^0.16.0",
-    "@hono/zod-validator": "^0.2.2",
-    "hono": "^4.5.11",
-    "zod": "^3.23.8"
+    "hono": "^4.5.11"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240529.0",
-    "wrangler": "^3.57.2"
+    "vercel": "^32.4.1"
   }
 }
