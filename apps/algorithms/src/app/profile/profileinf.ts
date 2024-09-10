@@ -1,6 +1,4 @@
-"use server";
-
-export async function ProfileInf() {
+export function ProfileInf() {
   const profileInf = {
     social_media: {
       instagram:

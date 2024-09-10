@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  /* Customização da barra de rolagem para WebKit browsers */
+::-webkit-scrollbar {
+  width: 3px; /* Largura da barra de rolagem */
+  border-radius: 6px;
+  opacity: 0.45;
+ /* Bordas arredondadas */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+  border-radius: 6px;
+  opacity: 0.45;
+ /* Bordas arredondadas para a trilha */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00FF00;
+  opacity: 0.45;
+  /* Cor da parte rolável da barra de rolagem */
+  border-radius: 6px; /* Bordas arredondadas para o "thumb" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00CC00;
+  opacity: 0.45;
+ /* Cor quando o mouse está sobre o "thumb" */
+}
+
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

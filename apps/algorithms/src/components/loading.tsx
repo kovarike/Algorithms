@@ -15,7 +15,7 @@ export const Loading = ({ layoutId, messagem }: LoadingProps) => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
-          className="p-6 bg-blue-500 rounded-lg shadow-lg"
+          className="p-6 bg-emerald-400 rounded-lg shadow-lg"
         >
           <motion.h2 className="text-white text-lg">{messagem}</motion.h2>
         </motion.div>

@@ -26,16 +26,16 @@ const config = {
   },
   async redirects() {
     return [
-      {
-        source: "/",
-        destination: "/profile",
-        permanent: true,
-      },
-      {
-        source: "/admin",
-        destination: "/profile",
-        permanent: true,
-      },
+      // {
+      //   source: "/",
+      //   destination: "/profile",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/admin",
+      //   destination: "/profile",
+      //   permanent: true,
+      // },
     ];
   },
 };
