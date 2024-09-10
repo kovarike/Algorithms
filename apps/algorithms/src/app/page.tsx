@@ -1,3 +1,4 @@
+"use client"
 import { ContainerFull } from "@/components/containerfull";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -9,14 +10,14 @@ import { Toaster } from "sonner";
 
 export default function Home() {
   return (
-
-    <ContainerFull >
-      <Header>
-        <Link href="https://github.com/kovarike" name="GitHub" />
-        <Link href="https://algorithmss.com.br/profile" name="Portfolio" />
-      </Header>
-      <h2 className="text-center font-algorithms-font font-bold text-2xl mt-11">Wait for new feature</h2>
-      {/* <Search />
+    <>
+      <ContainerFull >
+        <Header>
+          <Link href="https://github.com/kovarike" name="GitHub" />
+          <Link href="https://algorithmss.com.br/profile" name="Portfolio" />
+        </Header>
+        <h2 className="text-center font-algorithms-font font-bold text-2xl mt-11">Wait for new feature</h2>
+        {/* <Search />
         <Post
           content="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
           name="Danilo"
@@ -36,9 +37,9 @@ export default function Home() {
           date="21/02/2000"
         />
         <Loading layoutId="1" messagem="Carregando..." /> */}
-      <Footer />
+        <Footer />
+      </ContainerFull>
       <Toaster />
-    </ContainerFull>
-
+    </>
   );
 }
