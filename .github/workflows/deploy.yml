@@ -37,7 +37,7 @@ jobs:
 
       - name: Pull Vercel Environment Information
         run: |
-          vercel env pull .env --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel env pull .env --yes --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
         id: deploy
