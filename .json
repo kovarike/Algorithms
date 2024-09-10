@@ -1,0 +1,32 @@
+
+
+  // {
+  //   "version": 2,
+  //   "builds": [
+  //     {
+  //       "src": "apps/algorithms/package.json",
+  //       "use": "@vercel/next"
+  //     },
+  //     {
+  //       "src": "apps/engine/package.json",
+  //       "use": "@vercel/node",
+  //       "config": {
+  //         "zeroConfig": true
+  //       }
+  //     }
+  //   ],
+  //   "routes": [
+  //     {
+  //       "src": "/api/(.*)",
+  //       "dest": "/apps/engine/dist/index.js"
+  //     },
+  //     {
+  //       "src": "/(.*)",
+  //       "dest": "/apps/algorithms/$1"
+  //     }
+  //   ],
+  //   "env": {
+  //   "NODE_ENV": "production"
+  // }
+  // }
+  
