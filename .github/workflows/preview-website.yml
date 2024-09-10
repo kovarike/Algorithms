@@ -1,17 +1,20 @@
-name: preview deployment - website
+name: deploy website to vercel
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
     paths:
-      - apps/algorithms/**  # Ajuste o caminho conforme necessário
-      - packages/**  # Inclua outros caminhos relevantes para mudanças
+      - apps/algorithms/**
+      - packages/**
+      - "!packages/email/**"
 
 jobs:
-  deploy-preview:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,16 +31,20 @@ jobs:
       - name: Build the project
         run: |
           npm run build
-          vercel build  # Adiciona o comando de construção prebuilt
 
       - name: Install Vercel CLI
         run: npm install -g vercel
 
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
+        id: deploy
         run: |
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --prebuilt
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --output=deploy.json
+
+      - name: Set Alias
+        run: |
+          DEPLOY_URL=$(jq -r '.url' deploy.json)
+          vercel alias --token=${{ secrets.VERCEL_TOKEN }} set $DEPLOY_URL algorithmss.com.br
