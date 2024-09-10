@@ -12,7 +12,7 @@ import { Translate } from "@/components/translate";
 import { Footer } from "@/components/footer";
 
 export default async function Profile() {
-  const { profile, social_media } = ProfileInf();
+  const { profile, social_media } = await ProfileInf();
   const id = uuidv4();
 
 
@@ -25,13 +25,13 @@ export default async function Profile() {
             <div
               className="flex items-center border-b border-slate-500 py-1"
             >
-              <Avatar alt="Danilo" border size="large" src={profile.src} />
+              <Avatar alt="Danilo" border size="Xlarge" src={profile.src} />
               <div className="text-center mx-auto space-y-4 max-w-auto w-auto">
-                <h2 className="text-4xl sm:text-2xl md:text-3xl font-semibold font-algorithms-font">
+                <h2 className="text-3xl sm:text-base md:text-base font-semibold font-algorithms-font">
                   Danilo Silva
                 </h2>
 
-                <h2 className="text-gray-600 text-4xl sm:text-2xl md:text-3xl font-algorithms-font font-medium ">
+                <h2 className="text-gray-600 text-xl sm:text-base md:text-base font-algorithms-font font-medium ">
                   Computer Engineer
                 </h2>
               </div>
