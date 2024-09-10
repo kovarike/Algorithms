@@ -11,7 +11,7 @@ import { Toaster } from "sonner";
 export default function Home() {
   return (
     <>
-      <ContainerFull >
+      <ContainerFull className="h-full" >
         <Header>
           <Link href="https://github.com/kovarike" name="GitHub" />
           <Link href="https://algorithmss.com.br/profile" name="Portfolio" />
