@@ -11,7 +11,7 @@ import { ProfileInf } from "./profileinf";
 import { Translate } from "@/components/translate";
 import { Footer } from "@/components/footer";
 
-export default function Profile() {
+export default async function Profile() {
   const { profile, social_media } = ProfileInf();
   const id = uuidv4();
 
