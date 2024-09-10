@@ -71,7 +71,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://algorithmss.com.br" />
       </head>
 
-      <body className={`${inter.className} bg-zinc-950 h-screen`}>{children}</body>
+      <body className={`${inter.className} bg-zinc-950`}>{children}</body>
     </html>
   );
 }

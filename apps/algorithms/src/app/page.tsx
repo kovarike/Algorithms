@@ -11,7 +11,7 @@ import { Toaster } from "sonner";
 export default function Home() {
   return (
     <>
-      <ContainerFull className="h-full w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mx-auto max-w-7xl bg-zinc-950 text-white" >
+      <div className="h-screen w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mx-auto max-w-7xl bg-zinc-950 text-white" >
         <Header>
           <Link href="https://github.com/kovarike" name="GitHub" />
           <Link href="https://algorithmss.com.br/profile" name="Portfolio" />
@@ -38,7 +38,7 @@ export default function Home() {
         />
         <Loading layoutId="1" messagem="Carregando..." /> */}
         <Footer />
-      </ContainerFull>
+      </div>
       <Toaster />
     </>
   );
