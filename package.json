@@ -3,9 +3,7 @@
   "description": "Algorithms WebSite",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "apps/*",
-    "packages/email/*"
+    "apps/*"
   ],
   "scripts": {
     "build": "turbo build --parallel",

@@ -1,5 +1,4 @@
-interface LogoProps extends React.SVGProps<SVGSVGElement> {}
-
+interface LogoProps extends React.SVGProps<SVGSVGElement> { }
 export const Logo: React.FC<LogoProps> = (props: LogoProps) => {
   return (
     <svg
