@@ -35,15 +35,16 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: 📤 Pull Vercel Environment Information
+      - name: Pull Vercel Environment Information
         run: |
           vercel env pull .env --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: 🏗 Build Project Artifacts
+      - name: Deploy to Vercel
+        id: deploy
         run: |
-          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --output=deploy.json
 
-      - name: Deploy Project Artifacts to Vercel
+      - name: Set Alias
         run: |
-          vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }} > domain.txt
-          vercel alias --token=${{ secrets.VERCEL_TOKEN }} set `cat domain.txt` algorithmss.com.br
+          DEPLOY_URL=$(jq -r '.url' deploy.json)
+          vercel alias --token=${{ secrets.VERCEL_TOKEN }} set $DEPLOY_URL algorithmss.com.br

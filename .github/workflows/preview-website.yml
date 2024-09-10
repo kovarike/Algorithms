@@ -28,6 +28,7 @@ jobs:
       - name: Build the project
         run: |
           npm run build
+          vercel build  # Adiciona o comando de construção prebuilt
 
       - name: Install Vercel CLI
         run: npm install -g vercel
@@ -37,6 +38,6 @@ jobs:
 
       - name: Deploy to Vercel
         run: |
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --prebuilt --archive=tgz
+          vercel --token ${{ secrets.VERCEL_TOKEN }} --prebuilt
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
