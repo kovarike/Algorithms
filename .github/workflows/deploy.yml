@@ -37,14 +37,8 @@ jobs:
       - name: Deploy to Vercel
         id: deploy
         run: |
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --output=deploy.json
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} 
 
-      - name: Set Alias
-        run: |
-          DEPLOY_URL=$(jq -r '.url' deploy.json)
-          vercel alias --token=${{ secrets.VERCEL_TOKEN }} set $DEPLOY_URL algorithmss.com.br
 
-      - name: Verify Deployment
-        run: |
-          DEPLOY_URL=$(jq -r '.url' deploy.json)
-          echo "Deployment URL: $DEPLOY_URL"
+
+     
