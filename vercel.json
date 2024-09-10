@@ -1,16 +1,32 @@
-{
-    "projects": {
-      "frontend": {
-        "source": "apps/algorithms",
-        "buildCommand": "npm run build",
-        "outputDirectory": "apps/algorithms/.next"
+
+
+  {
+    "version": 2,
+    "builds": [
+      {
+        "src": "apps/algorithms/package.json",
+        "use": "@vercel/next"
       },
-      "backend": {
-        "source": "apps/engine",
-        "routes": [
-          { "src": "/api/(.*)", "dest": "/apps/engine/dist/index.js" }
-        ]
+      {
+        "src": "apps/engine/package.json",
+        "use": "@vercel/node",
+        "config": {
+          "zeroConfig": true
+        }
       }
-    }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/apps/engine/dist/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/apps/algorithms/$1"
+      }
+    ],
+    "env": {
+    "NODE_ENV": "production"
+  }
   }
   
