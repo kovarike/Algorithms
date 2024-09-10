@@ -25,8 +25,8 @@ export default async function Profile() {
             <div
               className="flex items-center border-b border-slate-500 py-1"
             >
-              <Avatar alt="Danilo" border size="Xlarge" src={profile.src} />
-              <div className="text-center mx-auto space-y-4 max-w-auto w-auto">
+              <Avatar alt="Danilo" border size="large" src={profile.src} />
+              <div className="text-center mx-auto space-y-4 w-auto max-w-auto">
                 <h2 className="text-3xl sm:text-base md:text-base font-semibold font-algorithms-font">
                   Danilo Silva
                 </h2>
