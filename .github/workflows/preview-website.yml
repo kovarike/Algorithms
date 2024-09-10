@@ -9,8 +9,6 @@ on:
       - main
     paths:
       - apps/algorithms/**
-      - packages/**
-      - "!packages/email/**"
 
 jobs:
   deploy:
