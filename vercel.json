@@ -1,14 +1,14 @@
 {
     "projects": {
       "frontend": {
-        "source": "apps/frontend",
+        "source": "apps/algorithms",
         "buildCommand": "npm run build",
-        "outputDirectory": "apps/frontend/.next"
+        "outputDirectory": "apps/algorithms/.next"
       },
       "backend": {
-        "source": "apps/backend",
+        "source": "apps/engine",
         "routes": [
-          { "src": "/api/(.*)", "dest": "/apps/backend/dist/index.js" }
+          { "src": "/api/(.*)", "dest": "/apps/engine/dist/index.js" }
         ]
       }
     }
