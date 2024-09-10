@@ -1,5 +1,3 @@
-"user server"
-
 export function ProfileInf() {
   const profileInf = {
     social_media: {

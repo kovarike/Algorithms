@@ -12,7 +12,7 @@ import { Translate } from "@/components/translate";
 import { Footer } from "@/components/footer";
 
 export default async function Profile() {
-  const { profile, social_media } = await ProfileInf();
+  const { profile, social_media } = ProfileInf();
   const id = uuidv4();
 
 
