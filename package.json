@@ -18,6 +18,8 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^22.5.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -33,6 +35,11 @@
   "dependencies": {
     "@manypkg/cli": "^0.21.4",
     "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.1",
+    "next-cookies": "^2.0.3",
     "next-sitemap": "^4.2.3",
     "uuid": "^10.0.0"
   }

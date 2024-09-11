@@ -1,25 +1,21 @@
-import Image from "next/image";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from 'react';
 
 interface ImgProps extends HTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  props?: HTMLAttributes<HTMLImageElement>;
   height?: number;
   width?: number;
 }
 
-export function Img({ src, props, alt, height, width }: ImgProps) {
+export function Img({ src, alt, height, width, ...rest }: ImgProps) {
   return (
-    <>
-      <img
-        src={src}
-        alt={alt}
-        {...props}
-        height={height}
-        width={width}
-        className="object-cover"
-      />
-    </>
+    <img
+      src={src}
+      alt={alt}
+      height={height}
+      width={width}
+      {...rest}
+      className="object-cover"
+    />
   );
 }

@@ -16,6 +16,7 @@ const config = {
     ignoreBuildErrors: true,
   },
   images: {
+    domains: ['img.shields.io', 'github-readme-stats.vercel.app'],
     remotePatterns: [
       {
         protocol: "https",
@@ -26,11 +27,11 @@ const config = {
   },
   async redirects() {
     return [
-      // {
-      //   source: "/",
-      //   destination: "/profile",
-      //   permanent: true,
-      // },
+      {
+        source: "/admin",
+        destination: "/login",
+        permanent: true,
+      },
       // {
       //   source: "/admin",
       //   destination: "/profile",
